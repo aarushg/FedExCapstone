@@ -1,7 +1,9 @@
 package fedex.fedexfirsttest;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -45,7 +47,8 @@ public class MainActivity extends AppCompatActivity {
         else if (lastNum == '8') {switchColor = Color.GRAY; switchTextColor = Color.WHITE;}
         else {switchColor = Color.MAGENTA; switchTextColor = Color.WHITE;}
 
-        // Need to add a way to vibrate, may need to add vibration permission in AndroidManifest.xml
+        Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        vibrator.vibrate(500);
         bg.setBackgroundColor(switchColor);
         textView.setTextColor(switchTextColor);
     }
